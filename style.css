@@ -455,12 +455,18 @@ form.search button:hover {
 /* e. Responsive MENU - Off Canvas  */
 .site-off {
   position: fixed;
-  width: 120px;
+  margin-left: 0;
+  width: 320px;
   height: var(--percent100);
   background-color: var(--white-color);
   overflow-y: auto;
   z-index: 1000;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform .4s, visiblity 0.4s;
+  will-change: transform , visibility;
 }
+
 .showmenu .site-off{
   transform: translateX(0);
   visibility: visible;
@@ -470,14 +476,17 @@ form.search button:hover {
   width: var(--percent100);
   height: var(--percent100);
   touch-action: auto;
-  margin: 1.5em;
-  /* padding: 1.5em 0 1.5em ; */
+  /* margin: 1.5em; */
+  padding: 1.5em 0 1.5em ;
 }
 .off-canvas .canvas-head {
   color: var(--white-color); 
   justify-content: space-between;
   padding: 1.5em;
-  margin: -1.5em -1.5em 1.5em;
+  /* margin: -1.5em -1.5em 1.5em; */
+  margin-top: -1.5em;
+    margin-bottom: 1.5em;
+    margin-left: -1.5em;
   background-color: var(--secondary-dark-color);
   border-bottom-right-radius: 160px 25px;
 }
@@ -514,12 +523,15 @@ form.search button:hover {
   font-size: var(--font-small);
   font-weight: var(--fw3);
   line-height: 28px;
-  padding: 3em;
+  /* padding: 3em; */
 
-  /* height: auto;
+  height: auto;
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s cubic-bezier(0.075, 0.82, 0.165, 1); */
+  transition: max-height .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.off-canvas .expand>:where(ul , .mega){
+  max-height: 2000px;
 }
 .off-canvas .thetop-nav ul,
 .off-canvas nav > ul {
@@ -571,6 +583,81 @@ form.search button:hover {
 .off-canvas .expand>:where(ul,.mega){
   max-height: 2000px;
 }
+
+/*  02.slider */
+/*  it is use in media quary
+.slider > div > .wrapper{
+  width: calc(100% -(300px + 2em));
+  margin-left: auto;
+} */
+.slider .item{
+  position: relative;
+  height: 474px;
+  margin-left: 210px;
+}
+
+.slider .item::before{
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  background-color: var(--white-color);
+  z-index: 1;
+  filter: blur(50px);
+  opacity: .8;
+}
+
+.slider .text-content{
+  position: relative;
+  height: var(--percent100);
+  justify-content: flex-end;
+  padding: 0 0 10% 10%;
+  z-index: 1;
+}
+.slider h4{
+  font-size: var(--font-small);
+  font-weight: var(--fw7);
+  width: fit-content;
+  padding: 4px 10px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 4px;
+}
+.text-content:where(h2, h3) span:first-child{
+  font-weight: var(--fw3);
+  columns: var(--light-text-color);
+}
+.text-content:where(h2, h3) span:last-child{
+  color: var(--secondary-dark-color);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.swiper-pagintion .swiper-pagintion-bullet-active{
+  background-color: var(--secondary-dark-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (min-width:992px) {
@@ -761,4 +848,34 @@ form.search button:hover {
   margin-top: 0;
   color: white;
 }
+.slider > div > .wrapper{
+  width: calc(100% -(300px + 2em));
+  margin-left:auto;
+}
+
+/* 03.Brands */
+.brands .wrapper{
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2em 0;
+}
+.brands .item img{
+  opacity: .25;
+  transition: opacity .3s;
+}
+.brands .item a:hover img{
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 }
