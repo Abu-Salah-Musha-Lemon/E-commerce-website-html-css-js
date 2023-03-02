@@ -775,6 +775,10 @@ form.search button:hover {
   background-position-y:top ;
   background-repeat-y: on-repeat;
 }
+/* additional satrs size */
+.products .item:where(:nth-child(3), :nth-child(3) .stars){
+  width: 64px;
+}
 .products h3{
   font-family: Rybik;
   font-size: 1em;
@@ -854,19 +858,112 @@ margin-bottom: 2em;
 .products:where(.mini, main){
   font-weight: 400;
 }
-
+/* 4. d.brand */
+/* 1.35.12 */
+.products.main .item{
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 0 0.938rem;
+  padding-bottom: 2em;
+}
+.products.main .media{
+  height: 390px;
+}
+.products.main .footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 1em 1em;
+  border-radius: 7px;
+  z-index: 1;
+  background: linear-gradient(0deg, var(--light-bg-color) 0%, var(--white-color) 70%);
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity;
+  transition: all .2s ease-in-out;
+}
+.products.main .item:hover .footer{
+  opacity: 1;
+  visibility: visible;
+}
+.products.main .footer ul{
+  list-style: disc;
+  padding: 1.25em 0 0 1.25em;
+  line-height: 1.8;
+  border-top: 1px solid var(--border-color);
+  /* margin-top: 145px; */
+}
+.products.main .item:hover .content>*:not(footer){
+  z-index: 3;
+}
+.banners .item{
+  position: relative;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+}
+.banner .image{
+  text-align: right;
+}
+.branner .get-gray{
+background-color: var(--border-color);
+}
+.banner :where(.text-content, .over-link){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--percent100);
+  height: var(--percent100);
+}
+.banner .text-content{
+  padding: 1.5em 2.5em;
+}
+.banner h3{
+  font-size: calc(1em+.5vw);
+}
+.banner h4 span{
+  font-size: 80%;
+}
+.banner .primary-button{
+  z-index: 4;
+}
+.banners .products-categories .item{
+  display: flex;
+  padding: 1.5em;
+}
+.banners .products-categories .image{
+  max-width: 150px;
+}
+.mini-links ul{
+  font-size: var(--font-small);
+  color: var(--light-text-color);
+  margin-top: 1em;
+}
+.banners .second-links{
+  margin-top:2em ;
+}
+/*  this class did not work */
+.mini-links>ul li a:hover{
+  text-decoration: underline;
+}
+@media screen and(min-width:481px) {
+  .products.main .item{
+    flex: 0 0 50% ;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .products .price .current{
     font-size: 1.25em;
   }
-  .products.mini{
+  .products.mini , .branne .row{
     flex: 0 0 50%;
   }
-  
+ 
+  .products.main .item{
+    flex: 0 0 33.333% ;
+  }
 }
-/* 4. d.brand */
-/* 1.35.12 */
+
 
 @media screen and (min-width: 992px) {
   .container {
@@ -1073,10 +1170,14 @@ margin-bottom: 2em;
   .brands .item a:hover img {
     opacity: 1;
   }
-  .trending .products {
+  /* products  */
+  .trending .products ,.products-categories .row{
     flex: 0 0 33.333%;
   }
   .products.big.media {
     max-height: 373px;
+  }
+  .products.main .item{
+    flex: 0 0 25% ;
   }
 }
