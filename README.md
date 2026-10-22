@@ -35,6 +35,15 @@ The project is a redesigned and repaired version of the original `.Store` sample
 
 No frontend framework, package manager, or build step is required to run the storefront.
 
+## 🌐 Live Demo
+
+[**View Morrow — Modern E-commerce Storefront—> click me**](https://abu-salah-musha-lemon.github.io/E-commerce-website-html-css-js/)
+
+Explore the responsive storefront, browse products, try the search and filters, manage your wishlist, and test the shopping bag.
+
+**Author:** Abu Salah Musha Lemon
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
